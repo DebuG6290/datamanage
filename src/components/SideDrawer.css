@@ -1,0 +1,45 @@
+.main-sideDrawer{
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    border: 1px solid black;
+    border-radius: 1vh;
+    width: 50vw;
+    height: 90vh;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.sideDrawer-ele{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.img{
+    border: 5px solid black;
+    border-radius: 4px;
+}
+.sideDrawer-ele-heading{
+    font-size: larger;
+}
+.sideDrawer-ele-input{
+
+}
+.close-btn{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: larger;
+    color: lightcoral;
+}
+.submit-btn{
+    font-size: larger;
+    background-color: lightcoral;
+    border-radius: 1vh;
+    width: auto;
+}

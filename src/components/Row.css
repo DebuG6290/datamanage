@@ -8,3 +8,8 @@
 td{
     border: 1px solid black;
 }
+.row-ele{
+    text-align: center;
+    font-size: large;
+    border-radius: 0.75vh;
+}

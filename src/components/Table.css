@@ -2,3 +2,7 @@
     position: relative;
 
 }
+.main-table{
+    width: 100vw;
+    border-spacing: 0px;
+}

@@ -12,11 +12,12 @@ class Table extends Component {
     
         this.state = {
             personInfo:[],
-            elementToBeUpdated:null
+            elementToBeUpdated:null,
+            personInfoOriginal:[]
         }
     }
     getData=(data)=>{
-        this.setState({personInfo:data});
+        this.setState({personInfo:data,personInfoOriginal:data});
     }
     handleData=()=>{
         
@@ -27,119 +28,52 @@ class Table extends Component {
     handleChange=()=>{
         this.setState({elementToBeUpdated:null});
     }
-    handleDsc=(Id)=>{
+    handleSort=(Id,sortValue)=>{
         let temp=this.state.personInfo;
-        switch (Id) {
-            case 'first_name':
-                temp.sort((a, b) => {
-                    let fa = a.first_name.toLowerCase(),
-                        fb = b.first_name.toLowerCase();
-                
-                    if (fa > fb) {
-                        return -1;
-                    }
-                    if (fa < fb) {
-                        return 1;
-                    }
-                    return 0;
-                });
-                break;
-                case 'last_name':
-                    temp.sort((a, b) => {
-                        let fa = a.last_name.toLowerCase(),
-                            fb = b.last_name.toLowerCase();
-                    
-                        if (fa > fb) {
-                            return -1;
-                        }
-                        if (fa < fb) {
-                            return 1;
-                        }
-                        return 0;
-                    });
-                    break;
-                case 'email':
-                    temp.sort((a, b) => {
-                        let fa = a.email.toLowerCase(),
-                            fb = b.email.toLowerCase();
-                    
-                        if (fa > fb) {
-                            return -1;
-                        }
-                        if (fa < fb) {
-                            return 1;
-                        }
-                        return 0;
-                    });
-                    break;
-        
-            default:
-                break;
+        if(sortValue===1){
+            temp.sort((a, b) => {
+                let fa = a[Id].toLowerCase(),
+                    fb = b[Id].toLowerCase();
+            
+                if (fa < fb) {
+                    return -1;
+                }
+                if (fa > fb) {
+                    return 1;
+                }
+                return 0;
+            });
         }
-        this.setState({personInfo:temp})
-        console.log(this.state.personInfo);
-    }
-    handleAsc=(Id)=>{
-        let temp=this.state.personInfo;
-        switch (Id) {
-            case 'first_name':
-                temp.sort((a, b) => {
-                    let fa = a.first_name.toLowerCase(),
-                        fb = b.first_name.toLowerCase();
-                
-                    if (fa < fb) {
-                        return -1;
-                    }
-                    if (fa > fb) {
-                        return 1;
-                    }
-                    return 0;
-                });
-                break;
-                case 'last_name':
-                    temp.sort((a, b) => {
-                        let fa = a.last_name.toLowerCase(),
-                            fb = b.last_name.toLowerCase();
-                    
-                        if (fa < fb) {
-                            return -1;
-                        }
-                        if (fa > fb) {
-                            return 1;
-                        }
-                        return 0;
-                    });
-                    break;
-                case 'email':
-                    temp.sort((a, b) => {
-                        let fa = a.email.toLowerCase(),
-                            fb = b.email.toLowerCase();
-                    
-                        if (fa < fb) {
-                            return -1;
-                        }
-                        if (fa > fb) {
-                            return 1;
-                        }
-                        return 0;
-                    });
-                    break;
-        
-            default:
-                break;
+        else if(sortValue===2){
+            temp.sort((a, b) => {
+                let fa = a[Id].toLowerCase(),
+                    fb = b[Id].toLowerCase();
+            
+                if (fa > fb) {
+                    return -1;
+                }
+                if (fa < fb) {
+                    return 1;
+                }
+                return 0;
+            });
         }
-        this.setState({personInfo:temp})
-        console.log(this.state.personInfo);
+        else{
+            console.log(this.state.personInfoOriginal);
+            temp=this.state.personInfoOriginal;
+        }
+        this.setState({personInfo:temp});
+        console.log(this.state.personInfoOriginal);
     }
     render() {
         return (
             <div>
                 <InfoApi getData={this.getData}/>
                 <div className='app'>
-                    <table style={{width:'100vw',borderSpacing:'0px'}}>
+                    <table className='main-table'>
                         <thead>
                             <tr>
-                            <TableHeading handleAsc={this.handleAsc} handleDsc={this.handleDsc}/>
+                            <TableHeading handleAsc={this.handleAsc} handleDsc={this.handleDsc} handleSort={this.handleSort}/>
                             </tr>
                         </thead>
                         <tbody >

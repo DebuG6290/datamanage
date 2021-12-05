@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { FaArrowAltCircleRight } from 'react-icons/fa'
+import './SideDrawer.css'
 
 export class SideDrawer extends Component {
     constructor(props) {
@@ -16,23 +18,24 @@ export class SideDrawer extends Component {
       }
     render() {
         return (
-            <div style={{position:'absolute',top:'0',right:'0',border:'1px solid black',width:'40vw',backgroundColor:'white'}}>
-                <div>
+            <div className='main-sideDrawer'>
+                <div className='close-btn' onClick={()=>{this.props.handleChange();}}><FaArrowAltCircleRight/></div>
+                <div className='sideDrawer-ele'>
                     <img src={this.state.personInfo.avatar} alt='img'/>
                 </div>
-                <div>
-                    <div>First Name</div>
-                    <div>{this.state.personInfo.first_name}</div>
+                <div  className='sideDrawer-ele'>
+                    <div className='sideDrawer-ele-heading'>First Name</div>
+                    <input className='sideDrawer-ele-input'value={this.state.personInfo.first_name}></input>
                 </div>
-                <div>
-                    <div>Last Name</div>
-                    <div>{this.state.personInfo.last_name}</div>
+                <div className='sideDrawer-ele'>
+                    <div className='sideDrawer-ele-heading'>Last Name</div>
+                    <input className='sideDrawer-ele-input'value={this.state.personInfo.last_name}></input>
                 </div>
-                <div>
-                    <div>Email</div>
-                    <div>{this.state.personInfo.email}</div>
+                <div className='sideDrawer-ele'>
+                    <div className='sideDrawer-ele-heading'>Email</div>
+                    <input className='sideDrawer-ele-input'value={this.state.personInfo.email}></input>
                 </div>
-                <button onClick={this.handleSubmit}>Submit</button>
+                <button className='submit-btn' onClick={this.handleSubmit}>Submit</button>
             </div>
         )
     }

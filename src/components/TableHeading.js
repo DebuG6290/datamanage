@@ -6,32 +6,43 @@ export class TableHeading extends Component {
     constructor(props) {
         super(props)
         this.state = {
-             
+             sortValue:0,
+             sortId:null,
         }
     }
-    handleAsc=(Id)=>{
-        this.props.handleAsc(Id);
-    }
-    handleDsc=(Id)=>{
-        this.props.handleDsc(Id);
+    handleClick(Id){
+        let sortValue=this.state.sortValue;
+        if(this.state.sortId===Id){
+            if(this.state.sortValue===2){
+                sortValue=0;
+            }
+            else{
+                sortValue++;
+            }
+        }
+        else{
+            sortValue=1;
+        }
+        this.setState({sortValue:sortValue,sortId:Id},()=>{this.props.handleSort(Id,this.state.sortValue);})
     }
     
     render() {
         return (
             <>
+                    <th className='heading'>Select</th>
+                    <th className='heading'>Edit</th>
                     <th className='heading'>Image</th>
-                    <th className='heading'>
-                        First Name
-                        <div onClick={()=>{this.handleAsc(`first_name`)}}><FaArrowUp/></div>
-                        <div onClick={()=>{this.handleDsc(`first_name`)}}><FaArrowDown/></div>
+                    <th className='heading' onClick={()=>this.handleClick('first_name')}>First Name
+                        {this.state.sortValue===1&&this.state.sortId==='first_name'&&<FaArrowUp/>}
+                        {this.state.sortValue===2&&this.state.sortId==='first_name'&&<FaArrowDown/>}
                     </th>
-                    <th className='heading'>Last Name
-                        <div onClick={()=>{this.handleAsc(`last_name`)}}><FaArrowUp/></div>
-                        <div onClick={()=>{this.handleDsc(`last_name`)}}><FaArrowDown/></div>
+                    <th className='heading' onClick={()=>this.handleClick('last_name')}>Last Name
+                        {this.state.sortValue===1&&this.state.sortId==='last_name'&&<FaArrowUp/>}
+                        {this.state.sortValue===2&&this.state.sortId==='last_name'&&<FaArrowDown/>}
                     </th>
-                    <th className='heading'>Email
-                        <div onClick={()=>{this.handleAsc(`email`)}}><FaArrowUp/></div>
-                        <div onClick={()=>{this.handleDsc(`email`)}}><FaArrowDown/></div>
+                    <th className='heading' onClick={()=>this.handleClick('email')}>Email
+                        {this.state.sortValue===1&&this.state.sortId==='email'&&<FaArrowUp/>}
+                        {this.state.sortValue===2&&this.state.sortId==='email'&&<FaArrowDown/>}
                     </th>
             </>
         )

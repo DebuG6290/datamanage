@@ -19,14 +19,15 @@ export class Row extends Component {
 
     render() {
         return (
-            <>  
+            <> 
+            <td className='row-ele'><input type="checkbox"></input></td> 
+            <td className='row-ele' onClick={this.handleEdit}><FaUserEdit/></td>
             {this.state.data?
               <td className='row-ele'><img src={this.state.data.avatar} alt={this.state.data.first_name}/></td>
             :null}
             <td className='row-ele'>{this.state.data.first_name}</td>
             <td className='row-ele'>{this.state.data.last_name}</td>
             <td className='row-ele'>{this.state.data.email}</td>
-            <td className='row-ele' onClick={this.handleEdit}><FaUserEdit/></td>
             </>
         )
     }
