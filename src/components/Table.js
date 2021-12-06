@@ -73,7 +73,7 @@ class Table extends Component {
                     <table className='main-table'>
                         <thead>
                             <tr>
-                            <TableHeading handleAsc={this.handleAsc} handleDsc={this.handleDsc} handleSort={this.handleSort}/>
+                            <TableHeading data={this.state.personInfo} handleSort={this.handleSort}/>
                             </tr>
                         </thead>
                         <tbody >

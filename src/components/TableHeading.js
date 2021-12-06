@@ -8,6 +8,7 @@ export class TableHeading extends Component {
         this.state = {
              sortValue:0,
              sortId:null,
+             headings:[]
         }
     }
     handleClick(Id){
@@ -25,25 +26,23 @@ export class TableHeading extends Component {
         }
         this.setState({sortValue:sortValue,sortId:Id},()=>{this.props.handleSort(Id,this.state.sortValue);})
     }
-    
+    static getDerivedStateFromProps(props, state) {
+        if(props.data[0])
+        return  {headings: Object.keys(props.data[0])};
+      }
     render() {
         return (
             <>
                     <th className='heading'>Select</th>
                     <th className='heading'>Edit</th>
-                    <th className='heading'>Image</th>
-                    <th className='heading' onClick={()=>this.handleClick('first_name')}>First Name
-                        {this.state.sortValue===1&&this.state.sortId==='first_name'&&<FaArrowUp/>}
-                        {this.state.sortValue===2&&this.state.sortId==='first_name'&&<FaArrowDown/>}
-                    </th>
-                    <th className='heading' onClick={()=>this.handleClick('last_name')}>Last Name
-                        {this.state.sortValue===1&&this.state.sortId==='last_name'&&<FaArrowUp/>}
-                        {this.state.sortValue===2&&this.state.sortId==='last_name'&&<FaArrowDown/>}
-                    </th>
-                    <th className='heading' onClick={()=>this.handleClick('email')}>Email
-                        {this.state.sortValue===1&&this.state.sortId==='email'&&<FaArrowUp/>}
-                        {this.state.sortValue===2&&this.state.sortId==='email'&&<FaArrowDown/>}
-                    </th>
+                    {this.state.headings&&this.state.headings.map((element)=>{
+                        return (
+                            <th className='heading' onClick={()=>this.handleClick(`${element}`)}>{element.toUpperCase()}
+                                {this.state.sortValue===1&&this.state.sortId===`${element}`&&<FaArrowUp/>}
+                                {this.state.sortValue===2&&this.state.sortId===`${element}`&&<FaArrowDown/>}
+                            </th>
+                        )
+                    })}
             </>
         )
     }

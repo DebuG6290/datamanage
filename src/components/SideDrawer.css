@@ -26,6 +26,7 @@
 }
 .sideDrawer-ele-heading{
     font-size: larger;
+    /* justify-content: center; */
 }
 .sideDrawer-ele-input{
 
@@ -33,8 +34,8 @@
 .close-btn{
     position: absolute;
     top: 2px;
-    right: 2px;
-    font-size: larger;
+    right: 5px;
+    font-size: xx-large;
     color: lightcoral;
 }
 .submit-btn{
