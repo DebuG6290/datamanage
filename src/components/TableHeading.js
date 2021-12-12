@@ -33,7 +33,7 @@ export class TableHeading extends Component {
     render() {
         return (
             <>
-                    <th className='heading'>Select</th>
+                    <th className='heading'></th>
                     <th className='heading'>Edit</th>
                     {this.state.headings&&this.state.headings.map((element)=>{
                         return (

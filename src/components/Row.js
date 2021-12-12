@@ -7,15 +7,16 @@ export class Row extends Component {
     
         this.state = {
             data: this.props.data,
-            dataArray:Object.values(this.props.data)
+            dataArray:Object.values(this.props.data),
+            id:props.id
         }
     }
     handleEdit=()=>{
-        this.props.getToBeUpdated(this.state.data.id);
+        this.props.getToBeUpdated(this.state.data[this.state.id]);
     }
     checkImgUrl=(element)=>{
         
-        console.log(element);
+        // console.log(element);
         return((element+'').match(/\.(jpeg|jpg|gif|png)$/) != null);
     }
 

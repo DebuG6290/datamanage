@@ -1,5 +1,5 @@
 .main-sideDrawer{
-    position: absolute;
+    position: fixed;
     top: 2vh;
     right: 2vh;
     border: 1px solid black;
@@ -14,22 +14,42 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .sideDrawer-ele{
+    width: 48vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
 }
-.img{
-    border: 5px solid black;
+.sideDrawer-heading{
+    width: 48vw;
+    border: 2px solid black;
+    background-color: lightcoral;
+    color: white;
+    text-align: center;
+    border-radius: 2vh;
+}
+.sideDrawer-ele-img{
+    border: 2px solid lightcoral;
     border-radius: 4px;
+    align-self: center;
 }
 .sideDrawer-ele-heading{
     font-size: larger;
+    text-align: center;
+    border: 2px solid black;
+    background-color: lightcoral;
+    color: white;
+    border-radius: 5vh;
+    width: 14vw;
     /* justify-content: center; */
 }
 .sideDrawer-ele-input{
-
+    text-align: center;
+    border: 2px solid lightcoral;
+    width:24vw;
+    height: auto;
+    font-size: larger;
 }
 .close-btn{
     position: absolute;
@@ -42,5 +62,8 @@
     font-size: larger;
     background-color: lightcoral;
     border-radius: 1vh;
-    width: auto;
+    width: 14vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
