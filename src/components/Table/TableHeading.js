@@ -45,7 +45,9 @@ export class TableHeading extends Component {
                                     {this.state.sortDirection===2&&this.state.sortId===`${element}`&&<FaArrowDown/>}
                                 </th>
                             );
-                        }})
+                        }
+                        else return null;
+                    })
                     }      
             </>
         )

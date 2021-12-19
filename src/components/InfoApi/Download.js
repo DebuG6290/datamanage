@@ -1,5 +1,4 @@
 import React, { Component, createRef } from 'react'
-import JsFileDownloader from 'js-file-downloader'
 import './Download.css'
 import { FaFileCsv, FaFileDownload, FaRegFileCode, FaTimes } from 'react-icons/fa'
 

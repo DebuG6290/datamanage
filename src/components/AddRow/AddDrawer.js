@@ -47,6 +47,7 @@ export default class AddDrawer extends Component {
                             </div>
                         )
                     }
+                    else return null;
                 }):null}
                 <button className='submit-btn' onClick={this.handleSubmit}><BsPlusSquare/>Add New Row</button>
             </div>

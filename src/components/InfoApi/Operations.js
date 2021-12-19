@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { FaTrash, FaUserEdit, FaUserFriends } from 'react-icons/fa';
-import Compare from './Compare';
+import { FaTrash, FaUserFriends } from 'react-icons/fa';
 import './Operations.css'
 import {FiColumns} from "react-icons/fi";
 
@@ -45,6 +44,7 @@ constructor(props) {
                             {this.state.tableColumnHeadings?this.state.tableColumnHeadings.map((column)=>{
                                 if(column!=='unique_id')
                                 return <option value={column}>{column.toUpperCase()}</option>
+                                else return null;
                             }):null}
                         </select>
                     </div>

@@ -47,10 +47,14 @@ export default class Compare extends Component {
                                     count++;
                                     return <div className='compare-table-heading'>{element.toUpperCase()}</div>
                                 }
+                                else if(typeof(element)==='boolean'){
+                                    return <div className='compare-table-bool'>{element?<FaCheck/>:<FaTimes/>}</div>
+                                }
                                return <div className='compare-table-data'>{element}</div>
                             })}
                         </div>  
                         }
+                        else return null;
                     }):null}
 
                 {/* <div className='compare-ele-headings'>

@@ -34,6 +34,7 @@ export class SideDrawer extends Component {
                 <div className='close-btn' onClick={()=>{this.props.handleBack();}}><FaArrowAltCircleRight/></div>
                 {this.state.tableColumnHeadings&&this.state.tableColumnHeadings.map((element)=>{
                     if(element==='unique_id'){
+                        return null
                     }
                     else{
                         return(
