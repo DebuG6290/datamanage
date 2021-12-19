@@ -1,0 +1,55 @@
+.operation-btns{
+    display: flex;
+    align-items: center;
+    
+    height: 7vh;
+    background-image: linear-gradient(to left,lightcoral,white);
+}
+.operation-btn{
+    width: 5vw;
+    height: 6vh;
+    border: 1px solid black;
+    font-size: 1.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    font-weight: bold;
+}
+.delete{
+    background-color: lightcoral;
+}
+.compare{
+    background-color: rgb(235, 156, 156);
+}
+.edit{
+    background-color: rgb(229, 182, 182);
+}.bulkEdit-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.column-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}.column-heading-label{
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    font-weight: bold;
+}
+.column-select{
+    height: 4vh;
+    
+}
+.inputValue-box{
+    height: 4vh;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.bulkEdit-submit-btn{
+    height: 4vh;
+}

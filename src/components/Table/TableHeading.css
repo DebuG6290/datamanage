@@ -2,11 +2,13 @@
     /* display: flex;
     justify-content: space-evenly; */
     /* width: 100vw; */
+    position: fixed;
+    top: 7vh;
 }
 .heading{
     /* display: flex;
-    flex-direction: row;
-    justify-content: space-between; */
+    flex-direction: column; */
+    align-items: center;
     border: 1px solid black;
     font-size: large;
     background-color:lightcoral;

@@ -1,0 +1,20 @@
+.loading-main{
+    /* display: flex;
+    width:98 vw; */
+    position: absolute;
+    top: 45vh;
+    left: 13vw;
+    width: 74vw;
+    
+
+}
+.loading-heading{
+    text-align: center;
+    margin-bottom: 3vh;
+    font-weight: bold;
+    font-size: larger;
+}
+.loading-bar{
+    height: 5vh;
+    color: lightcoral;
+}
