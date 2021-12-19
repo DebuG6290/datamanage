@@ -62,8 +62,11 @@
     font-size: larger;
     background-color: lightcoral;
     border-radius: 1vh;
-    width: 14vw;
+    width: 12vw;
     display: flex;
+    height: 4vh;
     flex-direction: row;
     justify-content: space-evenly;
+    color: white;
+    border: 2px solid black;
 }

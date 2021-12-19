@@ -5,11 +5,18 @@
     /* width: 100vw; */
 
 }
-td{
+/* td{
     border: 1px solid black;
-}
+} */
 .row-ele{
+    
     text-align: center;
     font-size: large;
     border-radius: 0.75vh;
+}
+.checked{
+    border: 2px solid rgb(47, 117, 245);
+}
+.notChecked{
+    border: 1px solid black;
 }

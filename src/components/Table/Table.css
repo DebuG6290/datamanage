@@ -1,0 +1,27 @@
+.app{
+    position: relative;
+    /* overflow: hidden; */
+
+}
+.main-app{
+    /* overflow: hidden; */
+}
+.main-table{
+    width: 99vw;
+    border-spacing: 0px;
+    /* overflow: scroll; */
+}
+.table-heading{
+    position: sticky;
+}
+.table-body{
+    /* overflow-y: scroll; */
+}
+.lower-btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    bottom: 0vh;
+    padding-bottom: 1vh;
+}
