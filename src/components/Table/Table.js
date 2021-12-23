@@ -29,7 +29,8 @@ class Table extends Component {
         }
     }
     componentDidMount=()=>{
-        this.setState(localStorage.getItem('state')?JSON.parse(localStorage.getItem('state')):null,()=>{
+        console.log('idhar');
+        this.setState(localStorage.getItem('state')?JSON.parse(localStorage.getItem('state')):{tableData:this.state.tableData},()=>{
             this.setState({loading:false})
         });
     }
@@ -37,11 +38,13 @@ class Table extends Component {
         localStorage.setItem('state',JSON.stringify(this.state,function(key, value) { return value === undefined ? null : value; }))
     }
     getData=(data,typeOfOperation)=>{ // gets data and type of operation performed from InfoApi and stores data in tableData accordingly
+        console.log('aya kya');
         if(typeOfOperation==='delete-operation'){
             this.setState({tableData:[...data],tableColumnHeadings:Object.keys(data[0])},()=>{this.setState({loading:false})});
         }
         else{
             this.clearRowChecked();
+            console.log('aya');
             this.setState({tableData:[]},()=>{ //needed to set to [] first so that all the rows are newly made, else the checked/notChecked class anomaly happens
                 this.setState({tableData:[...data],tableColumnHeadings:Object.keys(data[0])},()=>{this.setState({loading:false})});})
         }
