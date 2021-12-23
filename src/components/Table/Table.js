@@ -95,10 +95,11 @@ class Table extends Component {
         //i.e it sorts the data based on what sort is needed and passes it to Row component for rendering
         let temp=[...this.state.tableData];
         console.log(temp,temp===[{}]);
-        if(~this.state.tableData||~this.state.tableData[0]){
-
+        if(!this.state.tableData||!this.state.tableData[0]){
+            console.log('hello');
         }
         else if(this.state.sortId===''){
+            console.log('hello1');
         }
         else if(this.state.tableData&&this.state.tableData[0]&&typeof(this.state.tableData[0][this.state.sortId])!=='number'){
             if( this.state.sortDirection===1){
